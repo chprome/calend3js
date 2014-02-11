@@ -1,0 +1,50 @@
+.background {
+    stroke: #333;
+    stroke-width: 3;
+    fill: white;
+}
+
+.today {
+    stroke: red;
+    stroke-width: 3;
+    stroke-opacity: 0.4;
+}
+
+.month {
+    rect {
+        stroke: #333;
+        stroke-width: 1;
+        fill: #3675b3;
+    }
+    text {
+        fill: white;
+        font-family: 'Arial';
+        font-size: 14px;
+    }
+}
+
+.event {
+    rect {
+        stroke: #333;
+        stroke-width: 1;
+        fill: white;
+    }
+    .label {
+        fill: #333;
+        font-family: 'Arial';
+        font-size: 14px;
+    }
+    
+    &:hover {
+        text {
+            font-weight: bold;
+        }
+    }
+
+    .start {
+        fill: #333;
+        font-family: 'Arial';
+        font-size: 12px;
+    }
+}
+

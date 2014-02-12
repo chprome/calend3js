@@ -1,3 +1,5 @@
+$blue: #3675b3;
+
 .background {
     stroke: #333;
     stroke-width: 3;
@@ -14,7 +16,7 @@
     rect {
         stroke: #333;
         stroke-width: 1;
-        fill: #3675b3;
+        fill: $blue;
     }
     text {
         fill: white;
@@ -41,10 +43,19 @@
         }
     }
 
-    .start {
-        fill: #333;
+    
+}
+
+.event-start {
+    text {
+        fill: $blue;
         font-family: 'Arial';
         font-size: 12px;
+        font-weight: bold;
+    }
+    rect {
+        fill: white;
+        stroke: #333;
     }
 }
 

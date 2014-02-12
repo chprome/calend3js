@@ -11732,7 +11732,8 @@ var EVENTS = [
 ];
 
 function Calend3js(selector) {
-    var w = 365*4,
+    var pixPerDay = 4,
+        w = 365*pixPerDay,
         h = 150,
         monthH = 30,
         eventH = h - monthH;
@@ -11822,19 +11823,36 @@ function Calend3js(selector) {
                     'class': 'label'
                 });
 
-        // start date
-        events.append('text')
+        var eventStart = svg.selectAll('events-start')
+            .data(EVENTS)
+            .enter()
+            .append('g')
+            .attr('class', 'event-start');
+
+        // start date   
+        eventStart.append('rect')
+                .attr({
+                    'x': function(d, i) {
+                        return (d.from.dayOfYear()-1)*w/365;
+                    },
+                    'y': monthH+eventH-20,
+                    'width': 20,
+                    height: 20
+                });
+
+        eventStart.append('text')
                .text(function(d) {
                     return d.from.date();
                })
                .attr({
-                    // 'text-anchor': 'middle',
                     'x': function(d, i) {
-                        return d.from.dayOfYear()*w/365;
+                        return d.from.dayOfYear()*w/365+5;
                     },
+                    'text-anchor': 'middle',
                     'y': monthH+eventH-5,
                     'class': 'start'
-                });        
+                });     
+
     }
 
     function drawToday(svg) {

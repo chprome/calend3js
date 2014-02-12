@@ -126,18 +126,21 @@ function Calend3js(selector) {
                 height: eventH
             });
 
+        // label
         events.append('text')
                .text(function(d) {
                     return d.label;
                })
                .attr({
                     'x': function(d, i) {
-                        return d.from.dayOfYear()*w/365;
+                        return d.from.dayOfYear()*w/365 + ((d.to.dayOfYear()-1)*w/365 - (d.from.dayOfYear()-2)*w/365)/2;
                     },
                     'y': monthH+eventH/2+5,
+                    'text-anchor': 'middle',
                     'class': 'label'
                 });
 
+        // start date
         events.append('text')
                .text(function(d) {
                     return d.from.date();

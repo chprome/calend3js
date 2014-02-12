@@ -1,5 +1,5 @@
 var d3 = require('d3'),
-    moment = require('moment');
+    moment = require('./moment.fr');
 
 var MONTHS = [
     moment([2014,0]),
@@ -96,7 +96,7 @@ function Calend3js(selector) {
 
         months.append('text')
                .text(function(d) {
-                    return (d.month()+1)+'/'+d.year();
+                    return d.format('MMMM');
                })
                .attr({
                     'text-anchor': 'middle',

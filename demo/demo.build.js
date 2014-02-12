@@ -11835,9 +11835,20 @@ function Calend3js(selector) {
                     'x': function(d, i) {
                         return (d.from.dayOfYear()-1)*w/365;
                     },
+                    'y': monthH+eventH-15,
+                    'width': 20,
+                    'height': 15,
+                    'class': 'box'
+                });
+        eventStart.append('rect')
+                .attr({
+                    'x': function(d, i) {
+                        return (d.from.dayOfYear()-1)*w/365;
+                    },
                     'y': monthH+eventH-20,
                     'width': 20,
-                    height: 20
+                    'height': 5,
+                    'class': 'box-top'
                 });
 
         eventStart.append('text')
@@ -11849,7 +11860,7 @@ function Calend3js(selector) {
                         return d.from.dayOfYear()*w/365+5;
                     },
                     'text-anchor': 'middle',
-                    'y': monthH+eventH-5,
+                    'y': monthH+eventH-3,
                     'class': 'start'
                 });     
 

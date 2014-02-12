@@ -48,13 +48,17 @@ $blue: #3675b3;
 
 .event-start {
     text {
-        fill: $blue;
+        fill: #333;
         font-family: 'Arial';
         font-size: 12px;
         font-weight: bold;
     }
-    rect {
+    .box {
         fill: white;
+        stroke: #333;
+    }
+    .box-top {
+        fill: #FF4E40;
         stroke: #333;
     }
 }
